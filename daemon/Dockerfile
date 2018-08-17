@@ -9,12 +9,14 @@ RUN apk add --no-cache aria2 supervisor lighttpd
 RUN wget -O /tmp/webui-aria2.zip https://github.com/ziahamza/webui-aria2/archive/master.zip \
         && unzip /tmp/webui-aria2.zip -d /tmp/ \
         && mv /tmp/webui-aria2-master/ /var/www/localhost/htdocs/aria2 \
+        && sed -i 's/port: 6800/port: 5666/g' /var/www/localhost/htdocs/aria2/configuration.js \
+        && sed -i 's/port: 6800/port: 5666/g' /var/www/localhost/htdocs/aria2/js/services/rpc/rpc.js \
         && rm /tmp/webui-aria2.zip
 
 COPY fs/ /
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 VOLUME [ "/downloads" ]
-EXPOSE 6800 5666
+EXPOSE 5666
 
 CMD [ "supervisord", "-c", "/etc/supervisord.conf" ]
