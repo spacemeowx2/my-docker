@@ -14,7 +14,6 @@ RUN curl -L -o /tmp/webui-aria2.zip https://github.com/ziahamza/webui-aria2/arch
         && rm /tmp/webui-aria2.zip
 
 COPY fs/ /
-COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 VOLUME [ "/downloads" ]
 EXPOSE 5666
