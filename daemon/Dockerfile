@@ -7,7 +7,7 @@ RUN apk add --no-cache aria2 supervisor lighttpd curl
 
 # Install webui-aria2
 RUN curl -L -o /tmp/webui-aria2.zip https://github.com/ziahamza/webui-aria2/archive/master.zip \
-        && unzip /tmp/webui-aria2.zip -d /tmp/ \
+        && unzip -q /tmp/webui-aria2.zip -d /tmp/ \
         && mv /tmp/webui-aria2-master/ /var/www/localhost/htdocs/aria2 \
         && sed -i 's/port: 6800/port: 5666/g' /var/www/localhost/htdocs/aria2/configuration.js \
         && sed -i 's/port: 6800/port: 5666/g' /var/www/localhost/htdocs/aria2/js/services/rpc/rpc.js \
