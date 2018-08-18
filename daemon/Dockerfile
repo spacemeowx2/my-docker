@@ -13,6 +13,8 @@ RUN curl -L -o /tmp/webui-aria2.zip https://github.com/ziahamza/webui-aria2/arch
         && sed -i 's/port: 6800/port: 5666/g' /var/www/localhost/htdocs/aria2/js/services/rpc/rpc.js \
         && rm /tmp/webui-aria2.zip
 
+ADD https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/other/Aria2/dht.dat /root/.aria2/dht.dat
+
 COPY fs/ /
 
 VOLUME [ "/downloads" ]
