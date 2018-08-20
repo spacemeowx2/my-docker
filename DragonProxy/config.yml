@@ -1,0 +1,83 @@
+# =================================
+#| DragonProxy Configuration File  |
+#|      Dragonet Foundation        |
+# =================================
+# https://GitHub.com/DragonetMC/DragonProxy/wiki
+
+# Language file
+# Default = English
+lang: default
+
+# What IP and port to bind on your own computer/server.
+# IP 0.0.0.0 means bind to all IP addresses available on your own computer/server.
+udp_bind_ip: '0.0.0.0'
+udp_bind_port: 19132
+
+# Authentication proxy details, for expert user
+# Proxy type. Can be NONE, HTTP, or SOCKS
+proxy_type: NONE
+# Proxy IP address
+proxy_ip: ''
+# Proxy port
+proxy_port: 8080
+
+# The MOTD (Message of the Day) that will be shown on the MCPE Server List
+motd: '&aServer by DragonProxy'
+
+# Your remote server (Java Minecraft server)
+# Notice: Please use spaces instead of TABs as indentions
+remote_server_addr: 'mc.hypixel.net'
+remote_server_port: 25565
+
+# Ping passthrough
+# Relay the motd, player count and total from the remote server
+ping_passthrough: false
+
+# Server Authentication Modes
+# online  : Traditional login screen by DragonProxy.
+# offline : Run the server in offline mode so you can't join premium servers like Hypixel.
+# cls     : Use our Central login System to link you Mojang and Microsoft account, COMMING SOON !
+# hybrid  : Only available for server owners who wanted to enable both
+#           Mojang accounts and xbox accounts.
+#           Use `online` mode for servers that are not yours.
+#           To use this, you MUST properly install and configure the addon to your BungeeCord server!!
+mode: online
+
+# Autologin credentials if you are alone on the server.
+# This will force server to accept only one player.
+# This will not be sent in timings reports.
+# Do not distribute your config file with credentials !!!!!
+# TODO: whitelist a username / ip
+auto_login : false
+online_username: myUsername
+online_password: myPassword
+
+# CLS Server for authentication service
+cls_server: http://auth.dragonet.org
+
+# Should we authenticate connecting player sessions with xbox live?
+authenticate_players: true
+
+# The in-game command prefix for players, by default it's Minecraft command prefix (a slash).
+command_prefix: '/'
+
+# How many players can join the proxy at once?
+# Set to -1 for infinite
+max_players: 10
+
+# Should we save console text in a file? (not working for now)
+log_console: false
+
+# Should console display colors
+log_colors: true
+
+# Should console display debug info (can spam A LOT)
+log_debug: false
+
+# How many threads will process MCPE packets? Only change if you know what you're doing.
+# Recommanded at least 8 threads.
+# If you using this software at home, you can set to lower value like 8 or 12.
+thread_pool_size: 8
+
+# Disables Packet events to save performance.
+disable_packet_events: true
