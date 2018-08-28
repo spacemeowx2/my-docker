@@ -15,7 +15,8 @@ RUN apt update && apt install -y \
     vim \
     cmake \
     make \
-    zsh
+    zsh \
+    gdb
 
 VOLUME [ "/data" ]
 WORKDIR /data
