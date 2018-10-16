@@ -1,0 +1,8 @@
+version: "2"
+
+services:
+  rtmp-server:
+    build: .
+    ports:
+      - "1935:1935"
+      - "8098:8098"
