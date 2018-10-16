@@ -1,7 +1,9 @@
 FROM node:8-alpine
-COPY . /app
+
+COPY package.json /app/package.json
 RUN cd /app \
     && npm install
+COPY . /app
 
 EXPOSE 8098
 EXPOSE 1935

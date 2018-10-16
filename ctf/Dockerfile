@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 LABEL maintainer="spacemeowx2@gmail.com"
 
 ENV PWNLIB_NOTERM=1
-RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \
+        && sed -i 's/security.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
 RUN apt update \
         && apt install -y \
