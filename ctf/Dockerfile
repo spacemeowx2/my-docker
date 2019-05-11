@@ -19,10 +19,8 @@ RUN cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc \
         && chsh -s /bin/zsh \
         && mkdir /var/run/sshd \
         && mkdir /root/.ssh
-COPY ./tmp/id_rsa.pub /root/.ssh/authorized_keys
-RUN chown root:root /root/.ssh/authorized_keys \
-        && chmod 600 /root/.ssh/authorized_keys
 
 VOLUME [ "/ctf" ]
+VOLUME [ "/root/.ssh/authorized_key" ]
 EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D", "-d"]
+CMD ["sh", "-c", "cp /root/.authorized_keys /root/.ssh/authorized_keys  && chown root:root /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys && /usr/sbin/sshd -D"]

@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  ctf:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - "~/.ssh/id_rsa.pub:/root/.authorized_keys:ro"
+      - "~/project/ctf:/ctf"
+    ports:
+      - "1023:22"
+    cap_add:
+      - SYS_PTRACE
