@@ -20,6 +20,9 @@ RUN cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc \
         && mkdir /var/run/sshd \
         && mkdir /root/.ssh
 
+RUN apt install -y \
+        && lib32stdc++6 libc6-i386 vim
+
 VOLUME [ "/ctf" ]
 VOLUME [ "/root/.ssh/authorized_key" ]
 EXPOSE 22
